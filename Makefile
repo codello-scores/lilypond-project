@@ -12,7 +12,7 @@ all: $(PDF_FILES)
 build/%.pdf %.pdf %.midi: scores/%.ly
 	@echo "========== Compiling" $< "=========="
 	mkdir -p $(shell dirname $@)
-	@$(LILY) $(LILY_OPTIONS) --output "$@" $<;
+	@$(LILY) $(LILY_OPTIONS) --output $(basename $@) $<;
 	@echo ""
 
 .PHONY: clean
