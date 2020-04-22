@@ -1,0 +1,3 @@
+[submodule "pdq"]
+	path = pdq
+	url = https://github.com/Codello/PDQ

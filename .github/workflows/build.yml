@@ -1,0 +1,24 @@
+name: Build
+on: push
+
+jobs:
+  build:
+    name: Build Scores
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Compile Files
+        uses: docker://codello/lilypond:shell
+        with:
+          entrypoint: make
+          args: ci
+        env:
+          B2_KEY_ID: ${{ secrets.B2_KEY_ID }}
+          B2_APPLICATION_KEY: ${{ secrets.B2_APPLICATION_KEY }}
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: Scores
+          path: build
