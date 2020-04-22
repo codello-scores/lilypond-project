@@ -36,4 +36,3 @@ fonts:
 ci: fonts all
 	rm -rf build/
 	mkdir -p build/
-	mv *.pdf build/
