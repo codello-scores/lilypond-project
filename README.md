@@ -5,7 +5,7 @@ Add the composer, title, and opus of the piece here.
 ## Engraving Scores
 
 ```shell
-make all 				 # Compiles all parts and the full score.
+make all         # Compiles all parts and the full score.
 make <score>.pdf # Engraves the full score.
 make <part>.pdf  # Engraves a <part>
 ```
