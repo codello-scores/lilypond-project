@@ -34,5 +34,3 @@ fonts:
 
 .PHONY: ci
 ci: fonts all
-	rm -rf build/
-	mkdir -p build/
