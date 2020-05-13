@@ -14,5 +14,5 @@ It may be helpful to list the available parts here.
 
 ## Installing Fonts
 
-This project uses the [PDQ](https://github.com/Codello/PDQ) theme. In order to compile these files the Yorkten font is required.
+This project uses the [PDQ](https://github.com/Codello/pdq) theme. In order to compile these files the Yorkten font is required.
 
