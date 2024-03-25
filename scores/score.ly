@@ -5,7 +5,7 @@
 % while score.ly defines the full score.
 %
 % The actual music should be defined in the music folder and included here.
-\version "2.20.0"
+\version "2.24.0"
 
 \include "pdq/pdq.ily" % Use the PDQ layout
 
