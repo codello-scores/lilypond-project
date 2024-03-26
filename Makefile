@@ -2,14 +2,16 @@ LILY= lilypond
 LILY_OPTIONS=-ddelete-intermediate-files -dno-point-and-click
 
 .SUFFIXES: .ly .ily .pdf .midi
+SCORE_DIR ?= scores
+BUILD_DIR ?= build
 
-LY_FILES = $(wildcard scores/*.ly)
-PDF_FILES = $(LY_FILES:scores/%.ly=build/%.pdf)
+LY_FILES = $(wildcard $(SCORE_DIR)/*.ly)
+PDF_FILES = $(LY_FILES:$(SCORE_DIR)/%.ly=$(BUILD_DIR)/%.pdf)
 
 .PHONY: all
 all: $(PDF_FILES)
 
-build/%.pdf %.pdf %.midi: scores/%.ly
+$(BUILD_DIR)/%.pdf %.pdf %.midi: $(SCORE_DIR)/%.ly
 ifdef GITHUB_ACTIONS
 	@echo "::group::Compile $<"
 else
@@ -26,4 +28,4 @@ endif
 
 .PHONY: clean
 clean:
-	rm -rf *.pdf scores/*.pdf build/
+	rm -rf *.pdf $(SCORE_DIR)/*.pdf build/
